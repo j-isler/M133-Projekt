@@ -7,7 +7,7 @@
     </head>
     <body>
         <header>
-            <p>Noteboard</p>
+            <h1>Noteboard</h1>
             <button type="submit" class="btn">Login</button>
         </header>
         <p>HALLO WORLD</p>
