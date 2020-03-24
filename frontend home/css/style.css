@@ -1,2 +1,13 @@
-body{
+.btn{
+    float: right;
+    background-color: #555555; /* Black */
+    border: none;
+    padding: 15px 32px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: auto;
 }
+

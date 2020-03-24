@@ -4,13 +4,14 @@
         <meta charset="utf-8">
         <title>Noteboard</title> 
         <link href="css/style.css" rel="stylesheet">
+        <?php require "../bootstrap/bootstap_temp.php" ?>
     </head>
     <body>
         <header>
-            <h1>Noteboard</h1>
             <button type="submit" class="btn">Login</button>
         </header>
-        <p>HALLO WORLD</p>
+        <p>Noteboard</p>
+    
         
     </body>
 </html>
