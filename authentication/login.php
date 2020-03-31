@@ -12,7 +12,7 @@
          if(!func::checkLoginState($dbh)){
             echo 'Welcome'. $_SESSION['username'] . '!';
          }else{
-            header("locaation: login.php");
+            header("location: index.php");
          }
 
       ?>
