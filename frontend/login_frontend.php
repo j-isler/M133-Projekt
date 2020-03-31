@@ -27,7 +27,7 @@
                 </label>
               </div>    
               <div class="form-group" style="background-color:#f1f1f1">
-                <button type="button" class="badge badge-pill badge-light">Cancel</button>
+                <span class="badge badge-pill badge-light"><a href="registration_frontend.php">SignUp</a></span>
                 <span class="badge badge-pill badge-light">Forgot <a href="#">password?</a></span>
               </div>
         </form>
