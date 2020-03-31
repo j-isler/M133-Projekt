@@ -3,12 +3,13 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php require "../bootstrap/bootstap_temp.php"; ?>
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div style="width: 50%; text-align: center; margin: auto">
-        <h2>Login Form</h2>
-        <form action="/action_page.php" method="post">
-              <div class="imgcontainer">
+    <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;"> 
+        <form action="/action_page.php" method="post" style="border:1px solid #ccc; border-radius: 15px; padding: 20px">
+             <h2>Login</h2>
+              <div class="imgcontainer" style="padding: 5px">
                 <img src="avatar.png" alt="Avatar" class="avatar">
               </div>
 
@@ -26,8 +27,8 @@
                   <input type="checkbox" class="form-check-input" checked="checked" name="remember"> Remember me
                 </label>
               </div>    
-              <div class="form-group" style="background-color:#f1f1f1">
-                <button type="button" class="badge badge-pill badge-light">Cancel</button>
+              <div class="form-group">
+                <span class="badge badge-pill badge-light"><a href="registration_frontend.php">SignUp</a></span>
                 <span class="badge badge-pill badge-light">Forgot <a href="#">password?</a></span>
               </div>
         </form>
