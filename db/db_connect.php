@@ -5,11 +5,6 @@
    
 
    $dbh = new PDO('mysql:host=db;dbname=noteboard', 'root', 'mariadb');
-   
-
-
-
-
 
  /*
    $stmt = $dbh->prepare("Select * From users;");
@@ -24,5 +19,3 @@
 */
 
 ?>
-
-
