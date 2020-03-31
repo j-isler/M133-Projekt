@@ -29,7 +29,7 @@
               </div>    
               <div class="form-group">
                 <span class="badge badge-pill badge-light"><a href="registration_frontend.php">SignUp</a></span>
-                <span class="badge badge-pill badge-light">Forgot <a href="#">password?</a></span>
+                <span class="badge badge-pill badge-light"><a href="#">Forgot password?</a></span>
               </div>
         </form>
     </div>
