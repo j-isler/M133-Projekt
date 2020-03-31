@@ -3,5 +3,11 @@
    define('DB_USERNAME', 'root');
    define('DB_PASSWORD', '');
    define('DB_DATABASE', 'noteboard');
-   $db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
+   $db = new mysqli(DB_SERVER, DB_USERNAME, DB_USERNAME, DB_DATABASE);
+
+   if ($db->connect_errno) {
+      echo "Failed to connect to MySQL: " . $db->connect_error;
+   }
+
+
 ?>
