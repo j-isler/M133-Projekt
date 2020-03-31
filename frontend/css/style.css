@@ -1,7 +1,4 @@
-
-.login{
-    width: 50%;
-    text-align: center;
-    margin: auto;
+body, html {
+    height: 100%;
 }
 
