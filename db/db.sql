@@ -17,7 +17,8 @@ create table sessions
 	serial int null,
 	column_4 int null,
 	date varchar(10) null,
+	user_id int,
 	constraint sessions_pk
 		primary key (id)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
