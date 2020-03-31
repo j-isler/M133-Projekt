@@ -21,10 +21,9 @@
 
                if ($row['id'] > 0){
                   
-                  //func::createRecord($row['id'], $row['username']);
-                  //header("location: index.php");
-
-                  echo func::createString(32);
+                  func::createRecord($dbh, $row['id'], $row['username']);
+                  header("location: index.php");
+                  
 
                }
 
