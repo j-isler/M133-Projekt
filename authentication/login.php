@@ -6,12 +6,13 @@
 
          if(!func::checkLoginState($dbh)){
           
-            if (isset($_POST['username']) && isset($_Post['password'])){
+            if (isset($_POST['username']) && isset($_POST['password'])){
 
                $query = "SELECT * From users Where username = :username And password = :password";
                
                $username = $_POST['username'];
                $password = $_POST['password'];
+
 
                $stmt = $dbh->prepare($query);
                $stmt->execute(array(':username' => $username, ':password' => $password));
