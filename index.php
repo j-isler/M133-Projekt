@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Noteboard</title> 
         <link href="css/style.css" rel="stylesheet">
-        <?php require "../bootstrap/bootstap_temp.php"; ?>
+        <?php require "bootstrap/bootstap_temp.php"; ?>
     </head>
     <body>
         <nav class="navbar navbar-light bg-light">
