@@ -64,7 +64,7 @@
                 </label>
               </div>    
               <div class="form-group">
-                <span class="badge badge-pill badge-light"><a href="registration">SignUp</a></span>
+                <span class="badge badge-pill badge-light"><a href="registration.php">SignUp</a></span>
                 <span class="badge badge-pill badge-light"><a href="#">Forgot password?</a></span>
               </div>
         </form>
