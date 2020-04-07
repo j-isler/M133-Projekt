@@ -1,7 +1,9 @@
 <?php
-   session_start();
-   
-   if(session_destroy()) {
-      header("Location: login.php");
-   }
+include_once("function.php");
+include_once("../db/db_connect.php"); 
+
+func::deleteCookie();
+
+header('location: login.php');
+
 ?>

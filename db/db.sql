@@ -13,11 +13,11 @@ CREATE TABLE IF NOT EXISTS users (
 create table sessions
 (
 	id int auto_increment,
-	token int null,
-	serial int null,
-	column_4 int null,
+	token varchar(250) null,
+	serial varchar(250) null,
 	date varchar(10) null,
+	user_id int,
 	constraint sessions_pk
 		primary key (id)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
