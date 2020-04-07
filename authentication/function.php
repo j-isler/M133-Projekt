@@ -3,11 +3,17 @@
 
 class func {
 
-    public static function checkLoginState($dbh){
-
-        if(!isset($_SESSION['user_id']) || !isset($_COOKIE['PHPSESSID'])){
+    public static function runSession(){
+        if (!isset($_SESSION)) {
             session_start();
         }
+    }
+
+    public static function checkLoginState($dbh){
+
+        func::runSession();
+
+
         if(isset($_COOKIE['user_id']) && isset($_COOKIE['token']) && isset($_COOKIE['serial'])){
             
             $query = "SELECT * From sessions Where user_id = :userid AND token = :token AND serial = :serial;";
@@ -35,7 +41,13 @@ class func {
                     ){
                         return true;
                     }
+                    else{
+                        func::createSession($_COOKIE['username'], $_COOKIE['user_id'], $_COOKIE['token'],
+                         $_COOKIE['serial']);
+                        return true;
+                    }
                 }
+
 
             } 
 
@@ -43,17 +55,20 @@ class func {
     }
     public static function createRecord($dbh, $id, $username){
 
-        $query = 'INSERT Into sessions (user_id, token, serial, date ) Values (:user_id, :token, :serial, "22/04/2020")';
+        $query = 'INSERT Into sessions (user_id, token, serial/*, date */) Values (:user_id, :token, :serial/*, "22/04/2020"*/)';
         $dbh->prepare("DELETE From sessions WHERE user_id = :userid;")->execute(array(':userid' => $id));
 
 
         $token = func::createString(32);
         $serial = func::createString(32);
+
         func::createCookie($username, $id, $token, $serial);
         func::createSession($username, $id, $token, $serial);
 
         $stmt = $dbh->prepare($query);
-        $stmt->execute(array(':user_id' => $id, ':token' => $token, ':serial' => $serial));
+        $stmt->execute(array(':user_id' => $id,
+                             ':token' => $token,
+                             ':serial' => $serial));
     }
     public static function createCookie($username, $id, $token, $serial){
         setcookie('user_id', $id, time() + (86400) * 30, "/");
@@ -62,10 +77,19 @@ class func {
         setcookie('serial', $serial, time() + (86400) * 30, "/");
     }
 
+    public static function deleteCookie(){
+        func::runSession();
+        setcookie('user_id', '', time() -1, "/");
+        setcookie('username', '', time()  -1, "/");
+        setcookie('token', '', time()  -1, "/");
+        setcookie('serial', '', time()  -1, "/");
+        session_destroy();
+    }
+
+
     public static function createSession($username, $id, $token, $serial){
-        if(isset($_SESSION['user_id']) || !isset($_COOKIE['PHPSESSID'])){
-            session_start();
-        }
+        func::runSession();
+        
         $_SESSION['user_id'] = $id;
         $_SESSION['token'] = $token;
         $_SESSION['serial'] = $serial;
