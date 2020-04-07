@@ -30,7 +30,7 @@
 
             }
          }else{
-            header("location: ../NoteBoard/index.php");
+            header("location: ../Noteboard/index.php");
          }
 
 ?>
