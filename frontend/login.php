@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"
     <?php require "../bootstrap/bootstap_temp.php"; ?>
     <link href="css/style.css" rel="stylesheet">
 </head>

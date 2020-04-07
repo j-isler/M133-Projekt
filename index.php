@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Noteboard</title> 
         <link href="css/style.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php require "bootstrap/bootstap_temp.php"; ?>
     </head>
     <body>
