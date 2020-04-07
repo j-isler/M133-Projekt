@@ -9,7 +9,7 @@
     <body>
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand">Noteboard</a>
-            <a href="login_frontend.php"><button class="btn btn-link my-2 my-sm-0" type="submit">Login</button></a>
+            <a href="frontend/login.php"><button class="btn btn-link my-2 my-sm-0" type="submit">Login</button></a>
         </nav>
         
     </body>
