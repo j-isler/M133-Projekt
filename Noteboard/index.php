@@ -3,7 +3,7 @@
     include_once("../db/db_connect.php");
 
     if(!func::checkLoginState($dbh)){
-        header("location:../frontend/login_frontend.php");
+        header("location:../frontend/login.php");
        // exit();
     }
 

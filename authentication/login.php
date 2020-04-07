@@ -22,7 +22,7 @@
                if ($row['id'] > 0){
                   
                   func::createRecord($dbh, $row['id'], $row['username']);
-                  header("location: index.php");
+                  header("location: ../Noteboard/index.php");
                   
 
                }
@@ -40,7 +40,7 @@
                ';
             }
          }else{
-            header("location: index.php");
+            header("location: ../Noteboard/index.php");
          }
 
 ?>
