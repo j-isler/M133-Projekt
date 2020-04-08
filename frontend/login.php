@@ -1,39 +1,3 @@
-<?php
-   include_once("../authentication/function.php");
-   include_once("../db/db_connect.php");
-   
-
-
-         if(!func::checkLoginState($dbh)){
-          
-            if (isset($_POST['username']) && isset($_POST['password'])){
-
-               $query = "SELECT * From users Where username = :username And password = :password";
-               
-               $username = $_POST['username'];
-               $password = $_POST['password'];
-
-
-               $stmt = $dbh->prepare($query);
-               $stmt->execute(array(':username' => $username, ':password' => $password));
-
-               $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-               if ($row['id'] > 0){
-                  
-                  func::createRecord($dbh, $row['id'], $row['username']);
-                  header("location: ../Noteboard/index.php");
-                  
-
-               }
-
-
-            }
-         }else{
-            header("location: ../Noteboard/index.php");
-         }
-
-?>
 <!DOCTYPE html>
 <html>
 <head>
