@@ -1,49 +1,9 @@
 <?php
-   include_once("../authentication/function.php");
-   include_once("../db/db_connect.php");
-   
-
-
-         if(!func::checkLoginState($dbh)){
-          
-            if (isset($_POST['username']) && isset($_POST['password'])){
-
-               $query = "SELECT * From users Where username = :username And password = :password";
-               
-               $username = $_POST['username'];
-               $password = $_POST['password'];
-
-
-               $stmt = $dbh->prepare($query);
-               $stmt->execute(array(':username' => $username, ':password' => $password));
-
-               $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-               if ($row['id'] > 0){
-                  
-                  func::createRecord($dbh, $row['id'], $row['username']);
-                  header("location: ../Noteboard/index.php");
-                  
-
-               }
-
-
-            }
-         }else{
-            header("location: ../Noteboard/index.php");
-         }
-
+  include_once("header.php");
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php require "../bootstrap/bootstap_temp.php"; ?>
-    <link href="css/style.css" rel="stylesheet">
-</head>
 <body>
     <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;"> 
-        <form action="login.php" method="post" style="border:1px solid #ccc; border-radius: 15px; padding: 20px">
+        <form action="../authentication/login.php" method="post" style="border:1px solid #ccc; border-radius: 15px; padding: 20px">
              <h2>Login</h2>
               <div class="imgcontainer" style="padding: 5px">
                 <img src="avatar.png" alt="Avatar" class="avatar">

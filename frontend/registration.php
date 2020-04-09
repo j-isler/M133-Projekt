@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-     <?php require "../bootstrap/bootstap_temp.php"; ?>
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+<?php
+  include_once("header.php");
+?>
 <body>
     <div style="width: 50%; text-align: center; margin: auto; height: 50%" class="container">
-        <form action="/action_page.php" style="border:1px solid #ccc">
+        <form action="../authentication/registration.php" style="border:1px solid #ccc">
           <div class="container">
             <div>
                 <h1>SignUp</h1>

@@ -1,10 +1,10 @@
 <?php
-   include_once("function.php");
+   include_once("SessionMngt.class.php");
    include_once("../db/db_connect.php");
    
 
 
-         if(!func::checkLoginState($dbh)){
+         if(!SessionMngt::checkLoginState($dbh)){
           
             if (isset($_POST['username']) && isset($_POST['password'])){
 
@@ -21,23 +21,15 @@
 
                if ($row['id'] > 0){
                   
-                  func::createRecord($dbh, $row['id'], $row['username']);
+                  SessionMngt::createRecord($dbh, $row['id'], $row['username']);
                   header("location: ../Noteboard/index.php");
                   
 
+               } else {
+                 header("location: ../frontend/login.php");
                }
 
 
-            }else{
-               echo '
-               <form action="login.php" method="post">
-                  <label>username</label><br>
-                  <input type="text" name="username" /><br>
-                  <label >Password</label><br>
-                  <input type="text" name="password" /><br>
-                  <input type="submit" value="login" />
-               </form>
-               ';
             }
          }else{
             header("location: ../Noteboard/index.php");
