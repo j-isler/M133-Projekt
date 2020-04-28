@@ -27,9 +27,7 @@
                 <label for="psw"><b>Password</b></label>
                 <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
               </div>
-                <button type="submit" class="btn btn-primary">Login</button>
-              <div class="form-group form-check">    
-              </div>    
+                <button type="submit" class="btn btn-primary">Login</button>   
               <div class="form-group">
                 <span class="badge badge-pill badge-light"><a href="registration.php">SignUp</a></span>
                 <span class="badge badge-pill badge-light"><a href="#">Forgot password?</a></span>
