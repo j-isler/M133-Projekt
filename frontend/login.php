@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,11 +6,9 @@
     <?php require "../bootstrap/bootstap_temp.php"; ?>
     <link href="css/style.css" rel="stylesheet">
 </head>
-=======
 <?php
   include_once("header.php");
 ?>
->>>>>>> e96d1ce187b415bef9d5e979ceb256fb8a47f335
 <body>
     <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;"> 
         <form action="../authentication/login.php" method="post" style="border:1px solid #ccc; border-radius: 15px; padding: 20px">
