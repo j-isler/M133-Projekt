@@ -1,8 +1,9 @@
 <?php 
 	include('../db/db_connect.php');
 	session_start();
+	global $errors = [];
 	
-	if (isset($_POST['register'])) {
+	if (isset($_POST['username'])) {
 		$username = mysqli_real_escape_string($db, $_POST['username']);
 		$email = mysqli_real_escape_string($db, $_POST['email']);
 		$password_1 = mysqli_real_escape_string($db, $_POST['password_1']);

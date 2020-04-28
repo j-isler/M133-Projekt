@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,9 +6,14 @@
     <?php require "../bootstrap/bootstap_temp.php"; ?>
     <link href="css/style.css" rel="stylesheet">
 </head>
+=======
+<?php
+  include_once("header.php");
+?>
+>>>>>>> e96d1ce187b415bef9d5e979ceb256fb8a47f335
 <body>
     <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;"> 
-        <form action="/action_page.php" method="post" style="border:1px solid #ccc; border-radius: 15px; padding: 20px">
+        <form action="../authentication/login.php" method="post" style="border:1px solid #ccc; border-radius: 15px; padding: 20px">
              <h2>Login</h2>
               <div class="imgcontainer" style="padding: 5px">
                 <img src="avatar.png" alt="Avatar" class="avatar">
@@ -15,11 +21,11 @@
 
               <div class="form-group">
                 <label for="uname"><b>Username</b></label>
-                <input type="text" class="form-control" placeholder="Enter Username" name="uname" required>
+                <input type="text" class="form-control" placeholder="Enter Username" name="username" required>
               </div>
               <div class="form-group">
                 <label for="psw"><b>Password</b></label>
-                <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+                <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
               </div>
                 <button type="submit" class="btn btn-primary">Login</button>
               <div class="form-group form-check">    
@@ -28,7 +34,7 @@
                 </label>
               </div>    
               <div class="form-group">
-                <span class="badge badge-pill badge-light"><a href="registration_frontend.php">SignUp</a></span>
+                <span class="badge badge-pill badge-light"><a href="registration.php">SignUp</a></span>
                 <span class="badge badge-pill badge-light"><a href="#">Forgot password?</a></span>
               </div>
         </form>

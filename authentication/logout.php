@@ -1,9 +1,9 @@
 <?php
-include_once("function.php");
+include_once("SessionMngt.class.php");
 include_once("../db/db_connect.php"); 
 
-func::deleteCookie();
+SessionMngt::deleteCookie();
 
-header('location: login.php');
+header('location: ../frontend/login.php');
 
 ?>

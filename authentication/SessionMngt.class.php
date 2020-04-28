@@ -1,7 +1,7 @@
 <?php
 
 
-class func {
+class SessionMngt {
 
     public static function runSession(){
         if (!isset($_SESSION)) {
@@ -11,7 +11,7 @@ class func {
 
     public static function checkLoginState($dbh){
 
-        func::runSession();
+        SessionMngt::runSession();
 
 
         if(isset($_COOKIE['user_id']) && isset($_COOKIE['token']) && isset($_COOKIE['serial'])){
@@ -42,7 +42,7 @@ class func {
                         return true;
                     }
                     else{
-                        func::createSession($_COOKIE['username'], $_COOKIE['user_id'], $_COOKIE['token'],
+                        SessionMngt::createSession($_COOKIE['username'], $_COOKIE['user_id'], $_COOKIE['token'],
                          $_COOKIE['serial']);
                         return true;
                     }
@@ -59,11 +59,11 @@ class func {
         $dbh->prepare("DELETE From sessions WHERE user_id = :userid;")->execute(array(':userid' => $id));
 
 
-        $token = func::createString(32);
-        $serial = func::createString(32);
+        $token = SessionMngt::createString(32);
+        $serial = SessionMngt::createString(32);
 
-        func::createCookie($username, $id, $token, $serial);
-        func::createSession($username, $id, $token, $serial);
+        SessionMngt::createCookie($username, $id, $token, $serial);
+        SessionMngt::createSession($username, $id, $token, $serial);
 
         $stmt = $dbh->prepare($query);
         $stmt->execute(array(':user_id' => $id,
@@ -78,7 +78,7 @@ class func {
     }
 
     public static function deleteCookie(){
-        func::runSession();
+        SessionMngt::runSession();
         setcookie('user_id', '', time() -1, "/");
         setcookie('username', '', time()  -1, "/");
         setcookie('token', '', time()  -1, "/");
@@ -88,7 +88,7 @@ class func {
 
 
     public static function createSession($username, $id, $token, $serial){
-        func::runSession();
+        SessionMngt::runSession();
         
         $_SESSION['user_id'] = $id;
         $_SESSION['token'] = $token;
