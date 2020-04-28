@@ -36,12 +36,6 @@
                 <label for="psw-repeat"><b>Repeat Password</b></label>
                 <input type="password" class="form-control" placeholder="Repeat Password" name="password_2" required>
             </div>
-            <div class="form-group form-check">
-                <label>
-                  <input type="checkbox" class="form-check-input" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                </label>
-            </div>
-
             <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
             <div class="clearfix">
