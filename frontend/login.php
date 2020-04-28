@@ -1,6 +1,7 @@
 <?php
   include_once("header.php");
 ?>
+
 <body>
     <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;"> 
         <form action="../authentication/login.php" method="post" style="border:1px solid #ccc; border-radius: 15px; padding: 20px">
