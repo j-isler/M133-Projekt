@@ -1,7 +1,7 @@
 <?php 
 	include('../db/db_connect.php');
 	session_start();
-	$errors = [];
+	global $errors = [];
 	
 	if (isset($_POST['username'])) {
 		$username = mysqli_real_escape_string($db, $_POST['username']);
