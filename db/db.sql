@@ -21,3 +21,11 @@ create table sessions
 		primary key (id)
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+create table notes
+(
+    id       int auto_increment
+        primary key,
+    text     longtext null,
+    id_users int      not null
+);
