@@ -14,4 +14,7 @@
         </nav>
         
     </body>
+    <footer>
+        <a href="frontend/impressum.php"><h3>Impressum</h3></a>
+    </footer>
 </html>
