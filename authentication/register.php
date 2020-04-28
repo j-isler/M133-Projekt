@@ -1,6 +1,6 @@
 <?php 
 	include('../db/db_connect.php');
-	session_start();
+	include('PasswordHash.class.php');
 	$errors = array();
 	
 	if (isset($_POST['username'])) {
@@ -37,14 +37,14 @@
 		}
 		
 		if (count($errors) == 0) {
-			$password = md5($password_1);
+			$password = PasswordHash::generatePassword($password_1);
 			
 			$query = "INSERT INTO users (username, password, email, firstname, lastname) 
 					  VALUES('$username', '$password', '$email', '$firstname', '$lastname')";
 			mysqli_query($db, $query);
 			$_SESSION['username'] = $username;
 			$_SESSION['success'] = "You are now logged in";
-			header('location: index.php');
+			header('location: ../frontend/login.php');
 		 }
 	}
 
