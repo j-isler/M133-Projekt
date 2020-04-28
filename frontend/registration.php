@@ -1,5 +1,17 @@
 <?php
+ 
   include_once("header.php");
+ /*
+  $errors = $_SESSION['error'];
+  if(!(count($errors) === 0)) {
+    foreach($errors as $error){
+
+        echo $error;
+    
+      }
+      // $_SESSION['error'] = array();
+  }
+ */
 ?>
 
 

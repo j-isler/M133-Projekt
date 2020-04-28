@@ -1,6 +1,12 @@
 <?php 
+	include_once("SessionMngt.class.php");
 	include('../db/db_connect.php');
 	include('PasswordHash.class.php');
+	
+	if(SessionMngt::checkLoginState($dbh)){
+        header("location: ../Noteboard/index.php");
+     }
+	
 	$errors = array();
 	
 	if (isset($_POST['username'])) {
@@ -18,6 +24,16 @@
 			array_push($errors, "The two passwords do not match");
 			
 		}	
+
+		$uppercase = preg_match('@[A-Z]@', $password_1);
+		$lowercase = preg_match('@[a-z]@', $password_1);
+		$number    = preg_match('@[0-9]@', $password_1);
+
+		if(!$uppercase || !$lowercase || !$number || strlen($password_1) < 8) {
+			array_push($errors, "password does not match criteria ( a lowercase Letter, a capital letter, a number, Minimum 8 characters");
+		}
+		
+
 		if (empty($firstname)) { array_push($errors, "First name is required"); }
 		if (empty($lastname)) { array_push($errors, "Last name is required"); }
 		
@@ -43,8 +59,12 @@
 					  VALUES('$username', '$password', '$email', '$firstname', '$lastname')";
 			mysqli_query($db, $query);
 			$_SESSION['username'] = $username;
+			$_SESSION['password'] = $password;
 			$_SESSION['success'] = "You are now logged in";
-			header('location: ../frontend/login.php');
+			header('location: login.php');
+		 }else {
+			$_SESSION['error'] = $errors;
+			header('location: ../frontend/registration.php');
 		 }
 	}
 
