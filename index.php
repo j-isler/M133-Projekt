@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Noteboard</title> 
+        <a href="https://m133.jenia-isler.ch/"><title>Noteboard</title></a>
         <link href="css/style.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php require "bootstrap/bootstap_temp.php"; ?>

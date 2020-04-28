@@ -29,9 +29,6 @@
               </div>
                 <button type="submit" class="btn btn-primary">Login</button>
               <div class="form-group form-check">    
-                <label>
-                  <input type="checkbox" class="form-check-input" checked="checked" name="remember"> Remember me
-                </label>
               </div>    
               <div class="form-group">
                 <span class="badge badge-pill badge-light"><a href="registration.php">SignUp</a></span>
