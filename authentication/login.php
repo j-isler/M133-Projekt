@@ -1,6 +1,7 @@
 <?php
    include_once("SessionMngt.class.php");
    include_once("../db/db_connect.php");
+   include_once("PasswordHash.class.php");
    
 
 
@@ -8,21 +9,24 @@
           
             if (isset($_POST['username']) && isset($_POST['password'])){
 
-               $query = "SELECT * From users Where username = :username And password = :password";
+               $query = "SELECT * From users Where username = :username";
                
                $username = $_POST['username'];
                $password = $_POST['password'];
 
 
                $stmt = $dbh->prepare($query);
-               $stmt->execute(array(':username' => $username, ':password' => $password));
+               $stmt->execute(array(':username' => $username));
 
                $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
                if ($row['id'] > 0){
-                  
-                  SessionMngt::createRecord($dbh, $row['id'], $row['username']);
-                  header("location: ../Noteboard/index.php");
+                  if (PasswordHash::checkPassword($password,$row['password'])){
+                     SessionMngt::createRecord($dbh, $row['id'], $row['username']);
+                     header("location: ../Noteboard/index.php");
+                  }else {
+                     header("location: ../frontend/login.php");
+                   }
                   
 
                } else {
