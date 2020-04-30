@@ -6,7 +6,17 @@
         header("location:../frontend/login.php");
        // exit();
     }
-//  https://www.pair.com/support/kb/how-to-use-jquery-to-show-hide-a-form-on-click/
+
+
+    $id = $_SESSION['user_id'];
+
+    $query = "SELECT * FROM notes Where id_users = :id";
+    $stmt = $dbh->prepare($query);
+    $stmt->execute(array(':id' => $id));
+
+    $rows = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -32,11 +42,20 @@
     <button type="button" class="btn btn-primary" id="toggleNoteEntry">Toggle Entry</button>
     <div id="EntryForm">
         <form action="src/create-record.php" method="post">
-            <textarea class="form-control" id="NoteText"" rows="3"></textarea>
+            <textarea class="form-control" name="text" id="NoteText"" rows="3"></textarea>
             <button class="btn btn-info" type="submit">Add</button>
         </form>
     </div>
-        
+
+    <?php
+        foreach( (array) $rows as $row):
+            
+    ?>
+    <div>
+        <p><?php echo $row['text']; ?></p>
+        <form action="src/delete-record.php" method="post"> <button type="submit" name="noteid" value="<?php echo $row['id']; ?>">Delete</button> </form>
+    </div>
+        <?php endforeach; ?>
     
         
 
