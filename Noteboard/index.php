@@ -29,7 +29,7 @@
     <div>
         <?php echo "Willkommen " . $_SESSION['username'] . " auf der Noteboardapplikation!"; ?>
     </div>
-    <button type="button" class="btn btn-primary" id="#toggleNoteEntry">Toggle Entry</button>
+    <button type="button" class="btn btn-primary" id="toggleNoteEntry">Toggle Entry</button>
     <div id="EntryForm">
         <form action="src/create-record.php" method="post">
             <textarea class="form-control" id="NoteText"" rows="3"></textarea>
