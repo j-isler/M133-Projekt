@@ -4,7 +4,7 @@
 
 <body>
     <div id="login"> 
-        <form action="../authentication/login.php" method="post" id="formlogin" style="border:1px solid #ccc; border-radius: 15px; padding: 20px">
+        <form action="../authentication/login.php" method="post" id="formlogin">
              <h2>Login</h2>
               <div class="imgcontainer" id="avatar">
                 <img src="avatar.png" alt="Avatar" class="avatar">
