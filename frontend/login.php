@@ -3,10 +3,10 @@
 ?>
 
 <body>
-    <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;"> 
-        <form action="../authentication/login.php" method="post" style="border:1px solid #ccc; border-radius: 15px; padding: 20px">
+    <div id="login"> 
+        <form action="../authentication/login.php" method="post" id="formlogin" style="border:1px solid #ccc; border-radius: 15px; padding: 20px">
              <h2>Login</h2>
-              <div class="imgcontainer" style="padding: 5px">
+              <div class="imgcontainer" id="avatar">
                 <img src="avatar.png" alt="Avatar" class="avatar">
               </div>
 

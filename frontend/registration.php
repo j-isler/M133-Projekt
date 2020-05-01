@@ -16,8 +16,8 @@
 
 
 <body>
-    <div style="width: 50%; text-align: center; margin: auto; height: 50%" class="container">
-        <form action="../authentication/register.php" method="POST" style="border:1px solid #ccc">
+    <div id="registration" class="container">
+        <form action="../authentication/register.php" method="POST" id="formregistration">
           <div class="container">
             <div>
                 <h1>SignUp</h1>
