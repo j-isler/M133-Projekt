@@ -5,7 +5,7 @@
    error_reporting(E_ALL);
    
 
-   $dbh = new PDO('mysql:host=db;dbname=noteboard', 'root', 'mariadb');
+   $dbh = new PDO('mysql:host=localhost;dbname=noteboard', 'root', 'mariadb');
 
  /*
    $stmt = $dbh->prepare("Select * From users;");
