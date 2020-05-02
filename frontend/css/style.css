@@ -1,3 +1,8 @@
+nav > *, footer {
+    margin-left: 22%;
+    margin-right: 22%;
+}
+
 body, html {
     height: 100%;
 }
@@ -21,12 +26,38 @@ body, html {
 }
 
 #registration{
-    width: 50%; 
-    text-align: center; 
-    margin: auto; 
-    height: 50%;
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    text-align: center;
 }
 
 #formregistration{
-    border:1px solid #ccc;
+    border:1px solid #ccc; 
+    border-radius: 15px; 
+    padding: 20px;
+}
+
+#EntryForm {
+    display:none;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+#text-box {
+    border: 2px solid black; 
+    border-radius: 10px;
+}
+
+#toggleNoteEntry{
+}
+
+#komplett {
+    text-align: center;
+}
+
+.card{
+    margin-left: 22%; 
+    margin-right: 22%;"
 }

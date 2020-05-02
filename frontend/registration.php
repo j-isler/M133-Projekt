@@ -1,37 +1,31 @@
 <?php
  
   include_once("header.php");
- 
-  
-
- 
-
 
 echo'
 <body>
     <div id="registration" class="container">
-        <form action="../authentication/register.php" method="POST" id="formregistration">
+        <form action="../authentication/register.php" method="POST" id="formregistration" style="margin-left: 22%; margin-right: 22%;">
           <div class="container">
             <div>
                 <h1>SignUp</h1>
-                <p>Please fill in this form to create an account.</p>
                 <hr>
             </div>
             <div class="form-group">
-                <label for="lastname"><b>lastname</b></label>
-                <input type="text" class="form-control" placeholder="Enter lastname" name="lastname" required>
+                <label for="firstname"><b>Firstname</b></label>
+                <input type="text" class="form-control" placeholder="Enter Firstname" name="firstname" required>
             </div>
             <div class="form-group">
-                <label for="firstname"><b>firstname</b></label>
-                <input type="text" class="form-control" placeholder="Enter firstname" name="firstname" required>
-            </div>
-            <div class="form-group">
-                <label for="email"><b>email</b></label>
-                <input type="text" class="form-control" placeholder="Enter Email" name="email" required>
+                <label for="lastname"><b>Lastname</b></label>
+                <input type="text" class="form-control" placeholder="Enter Lastname" name="lastname" required>
             </div>
             <div class="form-group">
                 <label for="username"><b>Username</b></label>
                 <input type="text" class="form-control" placeholder="Enter Username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email"><b>Email address</b></label>
+                <input type="text" class="form-control" placeholder="Enter Email address" name="email" required>
             </div>
             <div class="form-group">
                 <label for="psw"><b>Password</b></label>

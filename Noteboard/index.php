@@ -24,22 +24,17 @@
     <head>
         <meta charset="utf-8">
         <title>Noteboard</title>
-        <link href="../css/style.css" rel="stylesheet">
-        <link href="css/stylesheet.css" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <link href="../frontend/css/style.css" rel="stylesheet">
         <script type="text/javascript" src="js/script.js" ></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?php require "../bootstrap/bootstap_temp.php"; ?>
+        <nav class="navbar navbar-light bg-light">
+            <a href="index.php" class="navbar-brand">Noteboard</a>
+            <a href="../authentication/logout.php"><button class="btn btn-link my-2 my-sm-0" type="submit"><?php echo 'Welcome, ' . $_SESSION['username'];?> (Logout)</button></a>
+        </nav>
     </head>
 <body>
-    <nav class="navbar navbar-light bg-light">
-            <a href="/" class="navbar-brand">Noteboard</a>
-            <a href="../authentication/logout.php"><button class="btn btn-link my-2 my-sm-0" type="submit">Logout</button></a>
-    </nav>
     <div class="card" id="komplett">
-    <div class="card-header">
-        <?php echo "Willkommen " . $_SESSION['username'] . " auf der Noteboardapplikation!"; ?>
-    </div>
     <div class="card-body">
     <button type="button" class="btn btn-primary" id="toggleNoteEntry" >Toggle Entry</button>
     <div id="EntryForm" class="card">

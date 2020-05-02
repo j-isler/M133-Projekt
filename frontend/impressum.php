@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-     <html>
-     <head>
-         <meta name="viewport" content="width=device-width, initial-scale=1">
-         <link href="css/style.css" rel="stylesheet">
-         <link href="css/style.css" rel="stylesheet">
-         <?php require("../bootstrap/bootstap_temp.php"); ?>
-     </head>
+<?php
+  include_once("header.php");
+?>
 <body>
-    <p>Name: Noteboard</p>
-    <p>Adresse: Ausstellungsstrasse 70, 8005 Zürich</p>
-    <p>Telefonnummer: 079 000 00 00</p>
-    <p>E-Mail: noteboard@info.com</p>
+    <div class="container" id="impressum" style="margin-left: 22%; margin-right: 22%; padding: 20px;">
+        <p style="font-weight: bold;">Noteboard AG</p>
+        <p>Ausstellungsstrasse 70</p>
+        <p> 8005 Zürich</p>
+        <p>Telefon: 079 000 00 00</p>
+        <p>E-Mail: noteboard@info.com</p>
+    </div>
 </body>
