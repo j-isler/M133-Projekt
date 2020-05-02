@@ -1,20 +1,13 @@
 <?php
  
   include_once("header.php");
- /*
-  $errors = $_SESSION['error'];
-  if(!(count($errors) === 0)) {
-    foreach($errors as $error){
+ 
+  
 
-        echo $error;
-    
-      }
-      // $_SESSION['error'] = array();
-  }
- */
-?>
+ 
 
 
+echo'
 <body>
     <div id="registration" class="container">
         <form action="../authentication/register.php" method="POST" id="formregistration">
@@ -49,6 +42,16 @@
                 <input type="password" class="form-control" placeholder="Repeat Password" name="password_2" required>
             </div>
             <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+                <p style="color:red">
+                ';
+                    if(isset($_SESSION['error']) AND !(count($_SESSION['error']) === 0)) {
+                        foreach($_SESSION['error'] as $error){
+                            echo $error . '<br>';
+                        }
+                        unset($_SESSION['error']);
+                    }
+                echo '
+                </p>
 
             <div class="clearfix">
               <a href="login.php"><button type="button" class="btn btn-primary">Cancel</button></a>
@@ -59,3 +62,5 @@
     </div>
 </body>
 </html>
+';
+?>

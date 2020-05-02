@@ -1,7 +1,7 @@
 <?php
   include_once("header.php");
-?>
 
+echo '
 <body>
     <div id="login"> 
         <form action="../authentication/login.php" method="post" id="formlogin">
@@ -18,6 +18,16 @@
                 <label for="psw"><b>Password</b></label>
                 <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
               </div>
+                <p style="color:red">
+                ';
+                    if(isset($_SESSION['error']) AND !(count($_SESSION['error']) === 0)) {
+                        foreach($_SESSION['error'] as $error){
+                            echo $error . '<br>';
+                        }
+                        unset($_SESSION['error']); 
+                    }
+                echo '
+                </p>
                 <button type="submit" class="btn btn-primary">Login</button>   
               <div class="form-group">
                 <span class="badge badge-pill badge-light"><a href="registration.php">SignUp</a></span>
@@ -27,4 +37,5 @@
     </div>
 </body>
 </html>
-        
+';        
+?>

@@ -3,6 +3,7 @@
    include_once("../db/db_connect.php");
    include_once("PasswordHash.class.php");
    
+   $errors = array();
 
 
          if(!SessionMngt::checkLoginState($dbh)){
@@ -27,6 +28,8 @@
                      header("location: ../Noteboard/index.php");
                      
                   }else {
+                     array_push($errors, "Wrong Username or Password");
+                     $_SESSION['error'] = $errors;
                      header("location: ../frontend/login.php");
                   }
             }
@@ -50,12 +53,16 @@
                      SessionMngt::createRecord($dbh, $row['id'], $row['username']);
                      header("location: ../Noteboard/index.php");
                   }else {
+                     array_push($errors, "Wrong Username or Password");
+                     $_SESSION['error'] = $errors;
                      header("location: ../frontend/login.php");
                    }
                   
 
                } else {
-                 header("location: ../frontend/login.php");
+                  array_push($errors, "Wrong Username or Password");
+                  $_SESSION['error'] = $errors;
+                  header("location: ../frontend/login.php");
                }
 
 
