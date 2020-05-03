@@ -30,7 +30,7 @@
 		$number    = preg_match('@[0-9]@', $password_1);
 
 		if(!$uppercase || !$lowercase || !$number || strlen($password_1) < 8) {
-			array_push($errors, "password does not match criteria ( a lowercase Letter, a capital letter, a number, Minimum 8 characters");
+			array_push($errors, "password does not match criteria ( a lowercase Letter, a capital letter, a number, Minimum 8 characters)");
 		}
 		
 
