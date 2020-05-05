@@ -2,7 +2,7 @@
   include_once("header.php");
 ?>
 <body>
-    <div class="container" id="impressum" style="margin-left: 22%; margin-right: 22%; padding: 20px;">
+    <div class="card" id="impressum" style="padding:20px">
         <p style="font-weight: bold;">Noteboard AG</p>
         <p>Ausstellungsstrasse 70</p>
         <p> 8005 Zürich</p>

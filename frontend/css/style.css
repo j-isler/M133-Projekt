@@ -1,10 +1,21 @@
-nav > *, footer {
+nav > *, footer, .card {
     margin-left: 22%;
     margin-right: 22%;
 }
 
+ @media (max-width:1000px) {
+    nav > *, footer, .card, .card-body {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+ }
+
 body, html {
     height: 100%;
+}
+
+footer {
+    padding: 15px;
 }
 
 #login {
@@ -55,9 +66,4 @@ body, html {
 
 #komplett {
     text-align: center;
-}
-
-.card{
-    margin-left: 22%; 
-    margin-right: 22%;"
 }
